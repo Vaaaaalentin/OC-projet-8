@@ -67,6 +67,15 @@
 	};
 
 	/**
+	 * Will generate and return an unique ID
+	 *
+	 */
+	Store.prototype.uniqueID = function () {
+		var id = new Date().getTime();
+		return id;
+	};
+
+	/**
 	 * Will save the given data to the DB. If no item exists it will create a new
 	 * item, otherwise it'll simply update an existing item's properties
 	 *
@@ -79,14 +88,6 @@
 		var todos = data.todos;
 
 		callback = callback || function () {};
-
-		// Generate an ID
-	    var newId = ""; 
-	    var charset = "0123456789";
-
-        for (var i = 0; i < 6; i++) {
-     		newId += charset.charAt(Math.floor(Math.random() * charset.length));
-		}
 
 		// If an ID was actually given, find the item and update each property
 		if (id) {
@@ -104,8 +105,7 @@
 		} else {
 
     		// Assign an ID
-			updateData.id = parseInt(newId);
-    
+			updateData.id = this.uniqueID();
 
 			todos.push(updateData);
 			localStorage[this._dbName] = JSON.stringify(data);
