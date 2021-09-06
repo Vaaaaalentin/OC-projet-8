@@ -71,8 +71,7 @@
 	 *
 	 */
 	Store.prototype.uniqueID = function () {
-		var id = new Date().getTime();
-		return id;
+		return new Date.now();
 	};
 
 	/**
