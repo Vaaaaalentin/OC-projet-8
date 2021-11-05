@@ -4,8 +4,8 @@
 	/**
 	 * Creates a new Model instance and hooks up the storage.
 	 *
-	 * @constructor
-	 * @param {object} storage A reference to the client side storage class
+	 * @class Model
+	 * @param {object} storage - A reference to the client side storage class
 	 */
 	function Model(storage) {
 		this.storage = storage;
@@ -13,9 +13,11 @@
 
 	/**
 	 * Creates a new todo model
+	 * @memberOf Model
 	 *
-	 * @param {string} [title] The title of the task
-	 * @param {function} [callback] The callback to fire after the model is created
+	 * @method
+	 * @param {string} title - The title of the task
+	 * @param {function} callback - The callback to fire after the model is created
 	 */
 	Model.prototype.create = function (title, callback) {
 		title = title || '';
@@ -34,9 +36,11 @@
 	 * return everything. If you pass in a string or number it'll look that up as
 	 * the ID of the model to find. Lastly, you can pass it an object to match
 	 * against.
+	 * @memberOf Model
 	 *
-	 * @param {string|number|object} [query] A query to match models against
-	 * @param {function} [callback] The callback to fire after the model is found
+	 * @method
+	 * @param {string|number|object} query - A query to match models against
+	 * @param {function} callback - The callback to fire after the model is found
 	 *
 	 * @example
 	 * model.read(1, func); // Will find the model with an ID of 1
@@ -62,10 +66,12 @@
 	/**
 	 * Updates a model by giving it an ID, data to update, and a callback to fire when
 	 * the update is complete.
+	 * @memberOf Model
 	 *
-	 * @param {number} id The id of the model to update
-	 * @param {object} data The properties to update and their new value
-	 * @param {function} callback The callback to fire when the update is complete.
+	 * @method
+	 * @param {number} id - The id of the model to update
+	 * @param {object} data - The properties to update and their new value
+	 * @param {function} callback - The callback to fire when the update is complete.
 	 */
 	Model.prototype.update = function (id, data, callback) {
 		this.storage.save(data, callback, id);
@@ -73,9 +79,11 @@
 
 	/**
 	 * Removes a model from storage
+	 * @memberOf Model
 	 *
-	 * @param {number} id The ID of the model to remove
-	 * @param {function} callback The callback to fire when the removal is complete.
+	 * @method
+	 * @param {number} id - The ID of the model to remove
+	 * @param {function} callback - The callback to fire when the removal is complete.
 	 */
 	Model.prototype.remove = function (id, callback) {
 		this.storage.remove(id, callback);
@@ -83,8 +91,10 @@
 
 	/**
 	 * WARNING: Will remove ALL data from storage.
+	 * @memberOf Model
 	 *
-	 * @param {function} callback The callback to fire when the storage is wiped.
+	 * @method
+	 * @param {function} callback - The callback to fire when the storage is wiped.
 	 */
 	Model.prototype.removeAll = function (callback) {
 		this.storage.drop(callback);
@@ -92,6 +102,10 @@
 
 	/**
 	 * Returns a count of all todos
+	 * @memberOf Model
+	 *
+	 * @method
+	 * @param {function} callback - A function to call with todos count passed as a parameter
 	 */
 	Model.prototype.getCount = function (callback) {
 		var todos = {

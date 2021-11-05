@@ -4,8 +4,9 @@
 
 	/**
 	 * Sets up a brand new Todo list.
+	 * @class Todo
 	 *
-	 * @param {string} name The name of your new to do list.
+	 * @param {string} name - The name of your new to do list.
 	 */
 	function Todo(name) {
 		this.storage = new app.Store(name);

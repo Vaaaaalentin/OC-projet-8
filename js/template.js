@@ -27,7 +27,7 @@
 	/**
 	 * Sets up defaults for all the Template methods such as a default template
 	 *
-	 * @constructor
+	 * @class Template
 	 */
 	function Template() {
 		this.defaultTemplate
@@ -41,14 +41,16 @@
 	}
 
 	/**
-	 * Creates an <li> HTML string and returns it for placement in your app.
+	 * Creates an li HTML string and returns it for placement in your app.
 	 *
 	 * NOTE: In real life you should be using a templating engine such as Mustache
 	 * or Handlebars, however, this is a vanilla JS example.
+	 * @memberOf Template
 	 *
-	 * @param {object} data The object containing keys you want to find in the
+	 * @method
+	 * @param {object} data - The object containing keys you want to find in the
 	 *                      template to replace.
-	 * @returns {string} HTML String of an <li> element
+	 * @return {string} HTML String of an li element
 	 *
 	 * @example
 	 * view.show({
@@ -84,9 +86,11 @@
 
 	/**
 	 * Displays a counter of how many to dos are left to complete
+	 * @memberOf Template
 	 *
-	 * @param {number} activeTodos The number of active todos.
-	 * @returns {string} String containing the count
+	 * @method
+	 * @param {number} activeTodos - The number of active todos.
+	 * @return {string} String containing the count
 	 */
 	Template.prototype.itemCounter = function (activeTodos) {
 		var plural = activeTodos === 1 ? '' : 's';
@@ -96,9 +100,11 @@
 
 	/**
 	 * Updates the text within the "Clear completed" button
+	 * @memberOf Template
 	 *
-	 * @param  {[type]} completedTodos The number of completed todos.
-	 * @returns {string} String containing the count
+	 * @method
+	 * @param  {number} completedTodos - The number of completed todos.
+	 * @return {string} String containing the count
 	 */
 	Template.prototype.clearCompletedButton = function (completedTodos) {
 		if (completedTodos > 0) {
