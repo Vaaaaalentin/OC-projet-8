@@ -1,10 +1,15 @@
 {
   "private": true,
   "dependencies": {
-    "todomvc-common": "^1.0.1",
-    "todomvc-app-css": "^2.0.1"
+    "todomvc-app-css": "^2.0.1",
+    "todomvc-common": "^1.0.1"
   },
   "devDependencies": {
-    "jasmine-core": "^2.0.0"
+    "docdash": "^1.2.0",
+    "jasmine-core": "^2.0.0",
+    "jsdoc-to-markdown": "^7.1.0"
+  },
+  "scripts": {
+    "jsdoc": "jsdoc -a all -c jsdoc-config.json -r /js -d docs --files /js > docs/API.md"
   }
 }
