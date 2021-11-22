@@ -20,6 +20,18 @@
                 "target":"_blank",
                 "class":"menu-item",
                 "id":"repository"
+            },
+            "Wiki": {
+                "href":"https://vaaaaalentin.github.io/OC-projet-8/",
+                "target":"_blank",
+                "class":"menu-item",
+                "id":"wiki"
+            },
+            "Application": {
+                "href":"https://vaaaaalentin.github.io/OC-projet-8/",
+                "target":"_blank",
+                "class":"menu-item",
+                "id":"application"
             }
         }
     },
